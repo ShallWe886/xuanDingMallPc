@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<script data-main="app" src="lib/require.js"></script>
+<script type="text/javascript">
+	requirejs(["scripts/first"]);
+</script>
+</head>
+<body>
+<div class="page" data-pageCode="orderDetail">
+	<div class="order_detail_box">
+		<!--header-->
+		<div class="header_wrap">
+			<div class="wrap clearfix">
+				<div class="header_locate">
+					<span>惠爱你的生活</span>
+				</div>
+				<div class="header_state">
+					<ul class="clearfix">
+						<li class="head_login"><a href="./login.html">登录</a><em>|</em></li>
+						<li class="head_register"><a href="./register.html">注册</a><em>|</em></li>
+						<li class="login_out" style="display: none;"><a href="javascript:void(0);">退出登录</a><em>|</em></li>
+						<li class="head_userName" style="display: none;"><a href="javascript:void(0);"></a><em>|</em></li>
+						<li class="head_cart"><a href="./cart.html">购物车 (<span>0</span>)</a><em>|</em></li>
+						<li><a href="./user.html">个人中心</a><em>|</em></li>
+						<li><a href="javascript:void(0);">联系我们</a><em>|</em></li>
+						<li><a href="javascript:void(0);">在线咨询</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="header">
+				<div class="wrap clearfix">
+					<h1 class="fl logo">
+						<a href="./index.html"></a>
+					</h1>
+					<div class="header_opera">
+						<div class="header_search">
+							<input type="text" placeholder="请输入商品" />
+							<a href="javascript:void(0);"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header_menu_wrap">
+				<div class="wrap clearfix">
+	<!-- 				<div class="header_type">
+						<a href="javascript:void(0);"><i class="icon_car"></i>选择类型<i class="icon_plus"></i></a>
+					</div> -->
+					<div class="header_menu">
+						<ul class="clearfix">
+							<li><a href="./index.html">首页</a></li>
+							<li><a href="./parts.html">精品专区</a></li>
+							<li><a href="./general.html">综合产品</a></li>
+							<li><a href="./change.html">积分换购</a></li>
+							<li><a href="javascript:void(0);">轮胎</a></li>
+						</ul>
+					</div>
+					<div class="header_tel">
+						<span><i></i>400-6529-666</span>
+					</div>
+				</div>
+			</div>
+		</div>
+			
+		<!--container-->
+		<div class="wrap">
+			<p class="page_nav">
+				<a href="./index.html">首页</a>
+				<span>></span>
+				<a href="./user.html">个人中心</a>
+				<span>></span>
+				<em>我的订单</em>
+			</p>
+			<!--订单信息-->
+			<div class="order_info_wrap">
+				<div class="clearfix">
+					<div class="fl order_buy">
+						<h3 class="order_tit">订单信息</h3>
+						<div class="order_buy_info">
+							<ul>
+								<li><span>收货人：</span><p class="name"></p></li>
+								<li><span>收货地址：</span><p class="address"></p></li>
+								<li><span>手机号码：</span><p class="phone"></p></li>
+								<li><span>邮箱：</span><p class="email"></p></li>
+							</ul>
+						</div>
+					</div>
+					<div class="fl order_progress_wrap">
+						<h3 class="order_tit"></h3>
+						<div class="order_progress">
+							<ul class="clearfix">
+								<li>
+									<i class="icon01"></i>
+									<p>提交订单</p>
+									<em></em>
+								</li>
+								<li><span></span></li>
+								<li>
+									<i class="icon02"></i>
+									<p>商品已打包</p>
+									<em></em>
+								</li>
+								<li><span></span></li> 
+								<li>
+									<i class="icon03"></i>
+									<p>等待配送</p>
+									<em></em>
+								</li>
+								<li><span></span></li> 
+								<li>
+									<i class="icon04"></i>
+									<p>等待安装</p>
+									<em></em>
+								</li>
+								<li><span></span></li> 
+								<li>
+									<i class="icon05"></i>
+									<p>订单完成</p>
+									<em></em>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!--商品信息-->
+			<div class="order_goods_wrap">
+				<h3 class="order_tit">商品信息</h3>
+				<div class="order_goods_list">
+					<ul>
+						
+					</ul>
+				</div>
+			</div>
+			
+			<!--付款信息-->
+			<div class="order_payment" style="display: none;">
+				<h3 class="order_tit">付款信息</h3>
+				<div class="clearfix order_payment_info">
+					<ul class="fr">
+						<li>支付方式：<span class="pay_way"></span></li>
+<!-- 						<li>订单总额：<span>￥888</span></li>
+						<li>优惠金额：<span>￥10</span></li> -->
+						<li>支付金额：<strong class="fc_red pay_money"></strong></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--footer-->
+		<div class="wrap footer">
+			<div class="footer_link">
+				<ul class="clearfix">
+					<li>
+						<dl>
+							<dt><strong>关于我们</strong></dt>
+							<dd><a href="javascript:void(0);">公司介绍</a></dd>
+							<dd><a href="javascript:void(0);">诚聘英才</a></dd>
+							<dd><a href="javascript:void(0);">联系我们</a></dd>
+							<dd><a href="javascript:void(0);">投诉建议</a></dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt><strong>售后服务</strong></dt>
+							<dd><a href="javascript:void(0);">质量问题</a></dd>
+							<dd><a href="javascript:void(0);">退货政策</a></dd>
+							<dd><a href="javascript:void(0);">退货流程</a></dd>
+							<dd><a href="javascript:void(0);">在线客服</a></dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt><strong>支付方式</strong></dt>
+							<dd><a href="javascript:void(0);">在线支付</a></dd>
+							<dd><a href="javascript:void(0);">支付问题</a></dd>
+							<dd><a href="javascript:void(0);">换购说明</a></dd>
+							<dd><a href="javascript:void(0);">发票说明</a></dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt><strong>平台信息</strong></dt>
+							<dd><a href="javascript:void(0);">网站公告</a></dd>
+							<dd><a href="javascript:void(0);">媒体报道</a></dd>
+							<dd><a href="javascript:void(0);">网贷平台</a></dd>
+							<dd><a href="javascript:void(0);">站长统计</a></dd>
+						</dl>
+					</li>
+					<li class="w24">
+						<dl>
+							<dt class="fw_400">企业QQ  88888888</dt>
+							<dd></dd>
+							<dd>企业客服    400-XXX-XXXX</dd>
+							<dd></dd>
+							<dd>(工作时间：9:30-18:30)</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt></dt>
+							<dd></dd>
+							<dd></dd>
+							<dd></dd>
+							<dd><a href="javascript:void(0);">在线咨询</a></dd>
+						</dl>
+					</li>
+				</ul>
+			</div>
+			<div class="footer_blogroll">
+				<dl class="clearfix">
+					<dt><strong>友情链接：</strong></dt>
+					<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+					<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+					<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+					<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+					<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+					<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+					<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+					<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+					<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+					<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+				</dl>
+			</div>
+			<p class="footer_copyright">选鼎电商有限公司&#160;&#160;Copyright@2017&#160;www.xuandingds.com&#160;All&#160;Rights.版权所有：选鼎电商（XXXXXXXX）</p>
+			<div class="footer_auth">
+				<ul class="clearfix">
+					<li>
+						<a href="javascript:void(0);">
+							<i class="icon01"></i>
+							<span>经营性网站<br/>备案信息</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<i class="icon02"></i>
+							<span>可信网站<br/>信用评价</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<i class="icon03"></i>
+							<span>网络警察<br/>提醒您</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);" style="line-height: 28px;">
+							<i class="icon04"></i>
+							<span>诚信网站</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<i class="icon05"></i>
+							<span>中国互联网<br/>举报中心</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<i class="icon06"></i>
+							<span>网络举报<br/>APP下载</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

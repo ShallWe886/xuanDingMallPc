@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<script data-main="app" src="lib/require.js"></script>
+<script type="text/javascript">
+	requirejs(["scripts/first"]);
+</script>
+</head>
+<body>
+<div class="page confirm" data-pageCode="confirm">
+	<div class="settlement_box">
+		<!--header-->
+		<div class="header_wrap">
+		<div class="wrap clearfix">
+			<div class="header_locate">
+				<span>惠爱你的生活</span>
+			</div>
+			<div class="header_state">
+				<ul class="clearfix">
+					<li class="head_login"><a href="./login.html">登录</a><em>|</em></li>
+					<li class="head_register"><a href="./register.html">注册</a><em>|</em></li>
+					<li class="login_out" style="display: none;"><a href="javascript:void(0);">退出登录</a><em>|</em></li>
+					<li class="head_userName" style="display: none;"><a href="javascript:void(0);"></a><em>|</em></li>
+					<li class="head_cart"><a href="./cart.html">购物车 (<span>0</span>)</a><em>|</em></li>
+					<li><a href="./user.html">个人中心</a><em>|</em></li>
+					<li><a href="javascript:void(0);">联系我们</a><em>|</em></li>
+					<li><a href="javascript:void(0);">在线咨询</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="header">
+			<div class="wrap clearfix">
+				<h1 class="fl logo">
+					<a href="./index.html"></a>
+				</h1>
+				<div class="header_opera">
+					<div class="header_search">
+						<input type="text" placeholder="请输入商品" />
+						<a href="javascript:void(0);"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+			<div class="header_menu_wrap">
+				<div class="wrap clearfix">
+					<div class="header_menu">
+						<ul class="clearfix">
+							<li><a href="./index.html">首页</a></li>
+							<li><a href="./parts.html">精品专区</a></li>
+							<li><a href="./general.html">综合产品</a></li>
+							<li><a href="./change.html">积分换购</a></li>
+							<li><a href="javascript:void(0);">轮胎</a></li>
+						</ul>
+					</div>
+					<div class="header_tel">
+						<span><i></i>400-6529-666</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--container-->
+		<div class="wrap settlement_wrap">
+			<h3 class="settlement_order">确认订单</h3>
+			<!--收货信息-->
+			<div class="clearfix settlement_info">
+				<h4 class="clearfix settlement_tit">
+					<span>收货信息</span>
+					<!-- <span class="fc_red">建议直接邮寄到相应区域的联营汽修店以便直接安装</span> -->
+					<a class="fc_blue" id="addAdress" href="javascript:void(0);">新增地址</a>
+					<!-- <a class="fc_blue" id="addFactory" href="javascript:void(0);">新增汽修厂地址</a> -->
+				</h4>
+				<div class="address_list">
+					<ul class="clearfix">
+					</ul>
+				</div>
+			</div>
+			<!--收货清单-->
+			<div class="settlement_list">
+				<h4 class="settlement_tit">收货清单<em></em></h4>
+				<div class="settlement_pro">
+					<ul>
+					</ul>
+				</div>
+			</div>
+			<!--订单备注-->
+			<div class="settlement_comment">
+				<h4 class="settlement_tit">订单备注</h4>
+				<div class="settlement_comment_input">
+					<textarea placeholder="限制45个字，请将购买需求在备注中详细说明" id="remark"></textarea>
+				</div>
+	<!-- 			<h6>发票信息</h6>
+				<div class="settlement_bill">
+					<span>电子普通发票</span>
+					<span>个人</span>
+					<span>商品明细</span>
+					<a href="javascript:void(0);">填写</a>
+				</div> -->
+				<h6>优惠服务</h6>
+				<div class="settlement_amount">
+					<ul class="clearfix">
+<!-- 						<li>优惠服务</li> -->
+						<li>
+							<span>免配送费</span>
+							<span>免运费</span> 
+						</li>
+					</ul>
+<!-- 					<ul class="clearfix">
+						<li>运费</li>
+						<li>本次运费由选鼎电商平台承担</li>
+						<li class="tr">-￥0.00</li>
+					</ul>
+					<ul class="clearfix">
+						<li>服务费</li>
+						<li>轮胎安装费用由选鼎电商平台承担</li>
+						<li class="tr">-￥0.00</li>
+					</ul>
+					<ul class="clearfix">
+						<li>账户余额</li>
+						<li>
+							<span class="fl">当前账户余额为<em>0.00</em>元</span>
+							<div class="fl settlement_checked">
+								<input type="checkbox"/>
+								<label for="">使用余额</label>
+							</div>
+						</li>
+						<li class="tr">-￥0.00</li>
+					</ul>
+					<ul class="clearfix">
+						<li>剩余积分</li>
+						<li>
+							<span class="fl">当前账户积分为<em>1000</em></span>
+							<div class="fl settlement_checked">
+								<input type="checkbox"/>
+								<label for="">使用积分</label>
+							</div>
+						</li>
+						<li class="tr">-￥0.00</li>
+					</ul> -->
+				</div>
+			</div>
+			<!--金额确认-->
+			<div class="clearfix settlement_confirm">
+				<a class="fr" href="javascript:void(0);" id="next_btn">提交订单</a>
+				<p class="fr" >应付总款：<span class="total_pay"></span></p>
+			</div>
+		</div>
+		<!--footer-->
+		<div class="wrap footer">
+			<div class="footer_link">
+				<ul class="clearfix">
+					<li>
+						<dl>
+							<dt><strong>关于我们</strong></dt>
+							<dd><a href="javascript:void(0);">公司介绍</a></dd>
+							<dd><a href="javascript:void(0);">诚聘英才</a></dd>
+							<dd><a href="javascript:void(0);">联系我们</a></dd>
+							<dd><a href="javascript:void(0);">投诉建议</a></dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt><strong>售后服务</strong></dt>
+							<dd><a href="javascript:void(0);">质量问题</a></dd>
+							<dd><a href="javascript:void(0);">退货政策</a></dd>
+							<dd><a href="javascript:void(0);">退货流程</a></dd>
+							<dd><a href="javascript:void(0);">在线客服</a></dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt><strong>支付方式</strong></dt>
+							<dd><a href="javascript:void(0);">在线支付</a></dd>
+							<dd><a href="javascript:void(0);">支付问题</a></dd>
+							<dd><a href="javascript:void(0);">换购说明</a></dd>
+							<dd><a href="javascript:void(0);">发票说明</a></dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt><strong>平台信息</strong></dt>
+							<dd><a href="javascript:void(0);">网站公告</a></dd>
+							<dd><a href="javascript:void(0);">媒体报道</a></dd>
+							<dd><a href="javascript:void(0);">网贷平台</a></dd>
+							<dd><a href="javascript:void(0);">站长统计</a></dd>
+						</dl>
+					</li>
+					<li class="w24">
+						<dl>
+							<dt class="fw_400">企业QQ  88888888</dt>
+							<dd></dd>
+							<dd>企业客服    400-XXX-XXXX</dd>
+							<dd></dd>
+							<dd>(工作时间：9:30-18:30)</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt></dt>
+							<dd></dd>
+							<dd></dd>
+							<dd></dd>
+							<dd><a href="javascript:void(0);">在线咨询</a></dd>
+						</dl>
+					</li>
+				</ul>
+			</div>
+			<div class="footer_blogroll">
+				<dl class="clearfix">
+					<dt><strong>友情链接：</strong></dt>
+					<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+					<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+					<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+					<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+					<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+					<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+					<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+					<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+					<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+					<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+				</dl>
+			</div>
+			<p class="footer_copyright">选鼎电商有限公司&#160;&#160;Copyright@2017&#160;www.xuandingds.com&#160;All&#160;Rights.版权所有：选鼎电商（XXXXXXXX）</p>
+			<div class="footer_auth">
+				<ul class="clearfix">
+					<li>
+						<a href="javascript:void(0);">
+							<i class="icon01"></i>
+							<span>经营性网站<br/>备案信息</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<i class="icon02"></i>
+							<span>可信网站<br/>信用评价</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<i class="icon03"></i>
+							<span>网络警察<br/>提醒您</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);" style="line-height: 28px;">
+							<i class="icon04"></i>
+							<span>诚信网站</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<i class="icon05"></i>
+							<span>中国互联网<br/>举报中心</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<i class="icon06"></i>
+							<span>网络举报<br/>APP下载</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="dialog_mask address_dialog_mask" style="display: none;"></div>
+<div class="dialog address_dialog" style="display: none;">
+	<a class="dialog_close" href="javascript:void(0);" id="close_btn"></a>
+	<div class="address_form">
+		<form>
+			<ul>
+				<li class="clearfix">
+					<label><i class="fc_red">*</i>收货人</label>
+					<input class="radius4" type="text" value="" id="userName"/>
+				</li>
+				<li class="clearfix">
+					<label><i class="fc_red">*</i>手机号码</label>
+					<input class="radius4" type="text" value="" id="mobile" maxlength="11" />
+				</li>
+<!-- 				<li class="clearfix">
+					<label>固定电话</label>
+					<div class="fl address_form_block">
+						<span>1111<i></i></span>
+						<input class="radius4" type="text" value="" id="tel"/>
+					</div>
+				</li> -->
+				<li class="clearfix">
+					<label>邮箱地址</label>
+					<input class="radius4" type="text" value="" id="email"/>
+					<em>用来接收邮件提醒</em>
+				</li>
+				<li class="clearfix">
+					<label><i class="fc_red">*</i>所在地区</label>
+					<div class="fl store_select address_select">
+						<select class="fl" name="" title="省" id="province">
+							<option value=""></option>
+						</select>
+						<select class="fl" name="" title="市" id="city" style="display: none;">
+							<option value=""></option>
+						</select>
+						<select class="fl" name="" title="区" id="region" style="display: none;">
+							<option value=""></option>
+						</select>
+					</div>
+				</li>
+				<li class="clearfix">
+					<label><i class="fc_red">*</i>详细地址</label>
+					<input class="radius4" type="text" value="" id="inputAdress"/>
+				</li>
+				<li class="clearfix nickAdress">
+					<label>地址别名</label>
+					<input class="radius4" type="text" placeholder="可自行添加地址别名" id="nickAdress" />
+					<a href="javascript:void(0);">家庭</a>
+					<a href="javascript:void(0);">朋友</a>
+					<a href="javascript:void(0);">公司</a>
+				</li>
+				<li class="clearfix">
+					<label><i class="fc_red">*</i>默认地址</label>
+					<input class="address_radio" type="checkbox" checked="checked" id="default" />
+				</li>
+			</ul>
+		</form>
+	</div>
+	<div class="ct_btn">
+		<a href="javascript:void(0);" id="saveAdress">保存地址</a>
+	</div>
+</div>
+
+
+<!--新增汽修厂地址弹窗-->
+<div class="dialog_mask store_dialog_mask" style="display: none;"></div>
+<div class="dialog store_dialog" style="display: none;">
+	<div class="clearfix store_tit">
+		<h2 class="fl">选择门店</h2>
+		<div class="fr store_select_wrap">
+			<div class="fl store_select">
+				<select name="" title="省" id="provinceAlert">
+					<option value=""></option>
+				</select>
+			</div>
+			<div class="fl store_select">
+				<select name="" title="市" id="cityAlert" style="display: none;">
+					<option value=""></option>
+				</select>
+			</div>
+			<div class="fl store_select">
+				<select name="" title="区" id="regionAlert" style="display: none;">
+				</select>
+			</div>
+		</div>
+		<a class="dialog_close" href="javascript:void(0);"></a>
+	</div>
+	<div class="store_map_wrap">
+		<div class="fl store_map" id="map">
+			<!-- <img src="images/img/map.png"/> -->
+		</div>
+		<div class="fr store_address">
+			<div class="header_search">
+				<input type="text" placeholder="请输入门店名称" id="storeName"/>
+				<a href="javascript:void(0);"></a>
+			</div>
+			<div class="store_address_list">
+				<ul>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.4&key=9a9527e17f364cc2f71eb217cff1686e"></script>
+</body>
+</html>

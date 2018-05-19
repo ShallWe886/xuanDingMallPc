@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<script data-main="app" src="lib/require.js"></script>
+<script type="text/javascript">
+	requirejs(["scripts/first"]);
+</script>
+</head>
+<body>
+<div class="page" data-pageCode="pay">
+<div class="payment_box">
+	<!--header-->
+	<div class="header_wrap">
+			<div class="wrap clearfix">
+				<div class="header_locate">
+					<span>惠爱你的生活</span>
+				</div>
+				<div class="header_state">
+					<ul class="clearfix">
+						<li class="head_login"><a href="./login.html">登录</a><em>|</em></li>
+						<li class="head_register"><a href="./register.html">注册</a><em>|</em></li>
+						<li class="login_out" style="display: none;"><a href="javascript:void(0);">退出登录</a><em>|</em></li>
+						<li class="head_userName" style="display: none;"><a href="javascript:void(0);"></a><em>|</em></li>
+						<li class="head_cart"><a href="./cart.html">购物车 (<span>0</span>)</a><em>|</em></li>
+						<li><a href="./user.html">个人中心</a><em>|</em></li>
+						<li><a href="javascript:void(0);">联系我们</a><em>|</em></li>
+						<li><a href="javascript:void(0);">在线咨询</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="header">
+				<div class="wrap clearfix">
+					<h1 class="fl logo">
+						<a href="./index.html"></a>
+					</h1>
+					<div class="header_opera">
+						<div class="header_search">
+							<input type="text" placeholder="请输入商品" />
+							<a href="javascript:void(0);"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		<div class="header_menu_wrap">
+			<div class="wrap clearfix">
+				<div class="header_menu">
+					<ul class="clearfix">
+							<li><a href="./index.html">首页</a></li>
+							<li><a href="./parts.html">精品专区</a></li>
+							<li><a href="./general.html">综合产品</a></li>
+							<li><a href="./change.html">积分换购</a></li>
+							<li><a href="javascript:void(0);">轮胎</a></li>
+					</ul>
+				</div>
+				<div class="header_tel">
+					<span><i></i>400-6529-666</span>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+	<!--container-->
+	<div class="wrap">
+		<div class="payment_info_wrap">
+			<div class="payment_info_state">
+				<h6>订单提交成功，请尽快支付</h6>
+				<p>请您在提交订单后<span>1</span>小时内完成支付，否则订单会自动取消。</p>
+				<a href="javascript:void(0);">订单详情<i></i></a>
+			</div>
+			<div class="payment_info" style="display: none;">
+				<p>收货人：<span class="name"></span></p>
+				<p>收货地址：<span class="address"></span></p>
+<!-- 				<p>商品名称：<span>米其林 MICHELIN ENERGY XM2 韧悦205/55R16 91V</span><em>X2</em></p> -->
+			</div>
+		</div>
+		<div class="payment_content_wrap bank">
+			<div class="fl payment_ewm">
+				<h6><i class="bank"></i></h6>
+			</div>
+			<div class="fr payment_explain">
+				<p>
+					<span>订单编号：<em>888888888888</em></span>
+					<span>应付金额：<em class="fc_red">1666元</em></span>
+				</p>
+			</div>
+			<h1 class="clearfix">请添加银行卡用于支付-安全便捷</h1>
+			<div class="card_box">
+				<span>银行卡号</span>
+				<div>
+					<input type="text" name="" id="cardNum" maxlength="19">
+					<button>下一步</button>
+				</div>
+			</div>
+			<div class="payment_way">
+				<dl class="clearfix">
+					<dt>其他支付方式</dt>
+					<dd class="border_none"><a class="iconalipay" href="javascript:void(0);"></a></dd>
+					<dd><a class="iconwechat" href="javascript:void(0);"></a></dd>
+				</dl>
+			</div>
+		</div>
+
+		<div class="payment_content_wrap alipay" style="display: none;">
+			<div class="clearfix">
+				<div class="fl payment_ewm">
+					<h6><i class="alipay"></i></h6>
+					<p>距离二维码过期还剩<em class="fc_red">40</em>秒，过期后请刷新页面重新获取二维码。</p>
+					<!--二维码过期状态-->
+					<p class="fc_red" style="display: none;">二维码已过期，刷新页面重新获取二维码。<a href="javascript:void(0);">刷新</a></p>
+					<span><img src="images/img/payment_ewm.jpg"/></span>
+				</div>
+				<div class="fr payment_explain">
+					<p>
+						<span>订单编号：<em>888888888888</em></span>
+						<span>应付金额：<em class="fc_red">1666元</em></span>
+					</p>
+					<i></i>
+				</div>
+			</div>
+			<div class="payment_way">
+				<dl class="clearfix">
+					<dt>其他支付方式</dt>
+					<dd class="border_none"><a class="iconwechat" href="javascript:void(0);"></a></dd>
+					<dd><a class="iconbank" href="javascript:void(0);"></a></dd>
+				</dl>
+			</div>
+		</div>
+
+		<div class="payment_content_wrap wechat" style="display: none;">
+			<div class="clearfix">
+				<div class="fl payment_ewm">
+					<h6><i class="wechat"></i></h6>
+					<p>距离二维码过期还剩<em class="fc_red">40</em>秒，过期后请刷新页面重新获取二维码。</p>
+					<!--二维码过期状态-->
+					<p class="fc_red" style="display: none;">二维码已过期，刷新页面重新获取二维码。<a href="javascript:void(0);">刷新</a></p>
+					<span><img src="images/img/payment_ewm.jpg"/></span>
+				</div>
+				<div class="fr payment_explain">
+					<p>
+						<span>订单编号：<em>888888888888</em></span>
+						<span>应付金额：<em class="fc_red">1666元</em></span>
+					</p>
+					<i></i>
+				</div>
+			</div>
+			<div class="payment_way">
+				<dl class="clearfix">
+					<dt>其他支付方式</dt>
+					<dd class="border_none"><a class="iconalipay" href="javascript:void(0);"></a></dd>
+					<dd><a class="iconbank" href="javascript:void(0);"></a></dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+	
+	<!--footer-->
+	<div class="wrap footer">
+		<div class="footer_link">
+			<ul class="clearfix">
+				<li>
+					<dl>
+						<dt><strong>关于我们</strong></dt>
+						<dd><a href="javascript:void(0);">公司介绍</a></dd>
+						<dd><a href="javascript:void(0);">诚聘英才</a></dd>
+						<dd><a href="javascript:void(0);">联系我们</a></dd>
+						<dd><a href="javascript:void(0);">投诉建议</a></dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><strong>售后服务</strong></dt>
+						<dd><a href="javascript:void(0);">质量问题</a></dd>
+						<dd><a href="javascript:void(0);">退货政策</a></dd>
+						<dd><a href="javascript:void(0);">退货流程</a></dd>
+						<dd><a href="javascript:void(0);">在线客服</a></dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><strong>支付方式</strong></dt>
+						<dd><a href="javascript:void(0);">在线支付</a></dd>
+						<dd><a href="javascript:void(0);">支付问题</a></dd>
+						<dd><a href="javascript:void(0);">换购说明</a></dd>
+						<dd><a href="javascript:void(0);">发票说明</a></dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><strong>平台信息</strong></dt>
+						<dd><a href="javascript:void(0);">网站公告</a></dd>
+						<dd><a href="javascript:void(0);">媒体报道</a></dd>
+						<dd><a href="javascript:void(0);">网贷平台</a></dd>
+						<dd><a href="javascript:void(0);">站长统计</a></dd>
+					</dl>
+				</li>
+				<li class="w24">
+					<dl>
+						<dt class="fw_400">企业QQ  88888888</dt>
+						<dd></dd>
+						<dd>企业客服    400-XXX-XXXX</dd>
+						<dd></dd>
+						<dd>(工作时间：9:30-18:30)</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt></dt>
+						<dd></dd>
+						<dd></dd>
+						<dd></dd>
+						<dd><a href="javascript:void(0);">在线咨询</a></dd>
+					</dl>
+				</li>
+			</ul>
+		</div>
+		<div class="footer_blogroll">
+			<dl class="clearfix">
+				<dt><strong>友情链接：</strong></dt>
+				<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+				<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+				<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+				<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+				<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+				<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+				<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+				<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+				<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+				<dd><a href="javascript:void(0);">瓜子二手车</a></dd>
+			</dl>
+		</div>
+		<p class="footer_copyright">选鼎电商有限公司&#160;&#160;Copyright@2017&#160;www.xuandingds.com&#160;All&#160;Rights.版权所有：选鼎电商（XXXXXXXX）</p>
+		<div class="footer_auth">
+			<ul class="clearfix">
+				<li>
+					<a href="javascript:void(0);">
+						<i class="icon01"></i>
+						<span>经营性网站<br/>备案信息</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<i class="icon02"></i>
+						<span>可信网站<br/>信用评价</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<i class="icon03"></i>
+						<span>网络警察<br/>提醒您</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" style="line-height: 28px;">
+						<i class="icon04"></i>
+						<span>诚信网站</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<i class="icon05"></i>
+						<span>中国互联网<br/>举报中心</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<i class="icon06"></i>
+						<span>网络举报<br/>APP下载</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>
