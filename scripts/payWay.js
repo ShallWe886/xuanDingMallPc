@@ -1,10 +1,13 @@
 define(function (require, exports, module) {
 	var common = require("scripts/common");
 	var id = "";
+	var pointNum = "";
 	var a = require("scripts/configuration");
 	if(a){
 		var imageBaseUrl = a.imgBase;
 	}
+	var payWay = "2";//默认银行卡支付
+	var payPlatform = "3";//支付平台
 
 	function before(){
 
@@ -13,11 +16,15 @@ define(function (require, exports, module) {
 	function init(){
 		common.queryCommonHead();
 		id = $.getPageParam("orderId");
-		if(!id){
+		pointNum = $.getPageParam("pointNum");
+		if(id){
+			queryOrder(id);
+		}else if(pointNum){
+			$(".payment_info").html('<p>商品名称：<span>积分充值</span><em>X'+ pointNum +'</em></p>').show();
+		}else{
 			$.alert("订单编号不存在");
 			return;
 		}
-		queryOrder(id);
 	}
 
 	function queryOrder(id){
@@ -101,7 +108,11 @@ define(function (require, exports, module) {
 				$.alert("银行卡号不能为空");
 				return;
 			}
-			startPay();
+			if(pointNum){
+				startPointsPay();
+			}else{
+				startOrderPay();
+			}
 			e.stopPropagation();
 		},"click")
 
@@ -120,14 +131,15 @@ define(function (require, exports, module) {
 
 	}
 
-	function startPay(){
-		var url = "/api/mall/order/info/pay";
+	function startPointsPay(){
+		var url = "/api/pay/account/recharge";
 		var paraMap = {
-			"orderId":id,
-			"payPlatform":"3",
-			"payWay":"2",
-			"payAccount":$("#cardNum").val(),
-			"returnUrl":imageBaseUrl + "/mall/views/index.html"
+			"payPlatform":payPlatform,
+			"payWay":payWay,
+			"payAccount":$("#cardNum").val() || "",
+			"returnUrl":imageBaseUrl + "/mall/views/index.html",
+			"amount":pointNum,
+			"remark":""
 		}
 		$.invoke(url,paraMap,function(data){
 			if(data){
@@ -154,7 +166,39 @@ define(function (require, exports, module) {
 		})
 	}
 
-
+	function startOrderPay(){
+		var url = "/api/mall/order/info/pay";
+		var paraMap = {
+			"orderId":id,
+			"payPlatform":payPlatform,
+			"payWay":payWay,
+			"payAccount":$("#cardNum").val() || "",
+			"returnUrl":imageBaseUrl + "/mall/views/index.html"
+		}
+		$.invoke(url,paraMap,function(data){
+			if(data){
+				var errorNo = data.errorNo;
+				var errorInfo = data.errorInfo;
+				if(0 == errorNo){
+					var result = data.result;
+					if(result){
+						if(result.content){
+							runCode(result.content);
+							$("#cardNum").val("");
+							$.confirm("支付已经完成？",function(index){
+								window.location.href="./finish.html?orderId="+id;
+								$.close(index);
+							},function(){
+								window.location.href="./finish.html?orderId="+id;
+							},{
+								"btn":["支付完成","支付失败"]
+							})
+						}
+					}
+				}
+			}
+		})
+	}
 
 	function runCode(html){  
 	  var newwin=window.open('','','');

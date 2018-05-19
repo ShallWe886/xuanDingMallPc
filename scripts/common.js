@@ -12,6 +12,9 @@ define(["scripts/configuration","jquery"],function(config,$) {
 					layer.confirm(msg,success,fail);					
 				}
 			},
+			prompt:function(option,success){
+				layer.prompt(option,success);
+			},
 			msg:function(msg,option){
 				layer.msg(msg,option);
 			},

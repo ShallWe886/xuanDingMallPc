@@ -608,6 +608,9 @@ define(function (require, exports, module) {
 				"remark":remark,
 				"items":newData
 			}
+			if(change){
+				paraMap.supportBonusPoints = "1";
+			}
 			$.invoke(url,paraMap,function(data){
 				if(data){
 					var errorNo = data.errorNo;
@@ -617,10 +620,14 @@ define(function (require, exports, module) {
 						if(result){
 							// layer.alert(result);
 							deleteCart();
-							window.location.href="./pay.html?orderId="+result.id;
+							if(change){
+								pay(result.id);
+							}else{
+								window.location.href="./payWay.html?orderId="+result.id;
+							}
 						}
 					}else{
-						layer.alert("订单创建失败");
+						layer.alert(errorInfo);
 					}
 				}
 			},function(data){
@@ -629,6 +636,31 @@ define(function (require, exports, module) {
 		}else{
 			layer.alert("未查询到订单商品");
 		}
+	}
+
+	function pay(id){
+		var url = "/api/mall/order/info/pay";
+		var paraMap = {
+			"orderId":id,
+			"payPlatform":"2",
+			"payWay":"5",
+			"payAccount":"",
+			"returnUrl":imageBaseUrl + "/mall/views/index.html"
+		}
+		$.invoke(url,paraMap,function(data){
+			if(data){
+				var errorNo = data.errorNo;
+				var errorInfo = data.errorInfo;
+				if(0 == errorNo){
+					var result = data.result;
+					if(result){
+						if(result.content){
+							window.location.href="./finish.html?orderId="+id;
+						}
+					}
+				}
+			}
+		})
 	}
 
 	function updateAdress(){

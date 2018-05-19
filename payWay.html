@@ -4,61 +4,58 @@
 <meta charset="UTF-8">
 <title></title>
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
+<script data-main="app" src="lib/require.js"></script>
+<script type="text/javascript">
+	requirejs(["scripts/first"]);
+</script>
 </head>
 <body>
 <div class="payment_box">
 	<!--header-->
 	<div class="header_wrap">
-		<div class="wrap clearfix">
-			<div class="header_locate">
-				<a href="javascript:void(0);"><i></i>朝阳区</a>
-				<span>免费安轮胎质量有保障</span>
-			</div>
-			<div class="header_state">
-				<ul class="clearfix">
-					<li><a href="javascript:void(0);">登录</a><em>|</em></li>
-					<li><a href="javascript:void(0);">注册</a><em>|</em></li>
-					<li><a href="javascript:void(0);">购物车 (<span>0</span>)</a><em>|</em></li>
-					<li><a href="javascript:void(0);">个人中心</a><em>|</em></li>
-					<li><a href="javascript:void(0);">联系我们</a><em>|</em></li>
-					<li><a href="javascript:void(0);">APP下载</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="header">
 			<div class="wrap clearfix">
-				<h1 class="fl logo">
-					<a href="javascript:void(0);">logo</a>
-				</h1>
-				<div class="header_opera">
-					<div class="header_label">
-						<ul class="clearfix">
-							<li>正品轮胎</li>
-							<li>售后保险</li>
-							<li>免费安装</li>
-							<li>价格公道</li>
-							<li>就近分配</li>
-						</ul>
-					</div>
-					<div class="header_search">
-						<input type="text" placeholder="请输入商品" />
-						<a href="javascript:void(0);"></a>
+				<div class="header_locate">
+					<span>惠爱你的生活</span>
+				</div>
+				<div class="header_state">
+					<ul class="clearfix">
+						<li class="head_login"><a href="./login.html">登录</a><em>|</em></li>
+						<li class="head_register"><a href="./register.html">注册</a><em>|</em></li>
+						<li class="login_out" style="display: none;"><a href="javascript:void(0);">退出登录</a><em>|</em></li>
+						<li class="head_userName" style="display: none;"><a href="javascript:void(0);"></a><em>|</em></li>
+						<li class="head_cart"><a href="./cart.html">购物车 (<span>0</span>)</a><em>|</em></li>
+						<li><a href="./user.html">个人中心</a><em>|</em></li>
+						<li><a href="javascript:void(0);">联系我们</a><em>|</em></li>
+						<li><a href="javascript:void(0);">在线咨询</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="header">
+				<div class="wrap clearfix">
+					<h1 class="fl logo">
+						<a href="./index.html"></a>
+					</h1>
+					<div class="header_opera">
+						<div class="header_search">
+							<input type="text" placeholder="请输入商品" />
+							<a href="javascript:void(0);"></a>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 		<div class="header_menu_wrap">
 			<div class="wrap clearfix">
 				<div class="header_menu">
 					<ul class="clearfix">
-						<li><a href="javascript:void(0);">首页</a></li>
-						<li><a class="active" href="javascript:void(0);">轮胎</a></li>
-						<li><a href="javascript:void(0);">汽车配件</a></li>
-						<li><a href="javascript:void(0);">积分换购</a></li>
+						<li><a href="./index.html">首页</a></li>
+						<li><a href="./parts.html">精品专区</a></li>
+						<li><a href="./general.html">综合产品</a></li>
+						<li><a href="./change.html">积分换购</a></li>
+						<li><a href="javascript:void(0);">轮胎</a></li>
 					</ul>
 				</div>
 				<div class="header_tel">
-					<span><i></i>010-8888888</span>
+					<span><i></i>400-6529-666</span>
 				</div>
 			</div>
 		</div>
@@ -73,9 +70,9 @@
 				<a href="javascript:void(0);">订单详情<i></i></a>
 			</div>
 			<div class="payment_info" style="display: none;">
-				<p>收货人：<span>小鸡炖蘑菇</span></p>
-				<p>收货地址：<span>北京市朝阳区北苑路17号北苑汽配商城</span></p>
-				<p>商品名称：<span>米其林 MICHELIN ENERGY XM2 韧悦205/55R16 91V</span><em>X2</em></p>
+				<p>收货人：<span class="name"></span></p>
+				<p>收货地址：<span class="address"></span></p>
+<!-- 				<p>商品名称：<span>米其林 MICHELIN ENERGY XM2 韧悦205/55R16 91V</span><em>X2</em></p> -->
 			</div>
 		</div>
 		<div class="payment_content_wrap">
@@ -223,14 +220,6 @@
 		</div>
 	</div>
 </div>
-<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-<script type="text/javascript">
-$(function(){
-	$(".payment_info_state a").click(function(){
-		$(this).toggleClass("active");
-		$(".payment_info").slideToggle("400");
-	})
-});
 </script>
 </body>
 </html>
